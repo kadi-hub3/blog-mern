@@ -30,7 +30,7 @@ const Post = ({ post, setCurrentId }) => {
         <Button
           style={{ color: "#fff" }}
           size="small"
-          onClick={() => setCurrentId(post.id)}
+          onClick={() => setCurrentId(post._id)}
         >
           <MoreHorizIcon />
         </Button>
@@ -40,8 +40,11 @@ const Post = ({ post, setCurrentId }) => {
           {post.tags.map((tag) => `#${tag} `)}
         </Typography>
       </div>
+      <Typography className={classes.title} variant="h5" gutterBottom>
+        {post.title}
+      </Typography>
       <CardContent>
-        <Typography className={classes.title} variant="h5" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           {post.message}
         </Typography>
       </CardContent>
